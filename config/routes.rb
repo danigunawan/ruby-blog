@@ -12,4 +12,13 @@ Rails.application.routes.draw do
     get '/delete', :to=>'users#deleteUser'
   end
 
+  scope 'post' do
+    post '/add', :to=> 'posts#createPost'
+    get '/get', :to=> 'posts#getAllPost'
+    get '/get/:id', :to=> 'posts#getPostById'
+    get '/getuserpost', :to=>'posts#getPostByUser'
+    post '/edit/:id', :to=>'posts#editPostByUser'
+    get 'delete/:id', :to=>'posts#deletePost'
+  end
+
 end
